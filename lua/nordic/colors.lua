@@ -6,7 +6,7 @@ local palette = {
 
     -- Darker colors.
     -- Not in base Nord.
-    black = "#1a1d23",
+    black = "#1b1d22",
 		statusline_black = "#111318",
     -- This color is actually used on their website's dark theme.
 		--  #1e222a , #242933 , # 2e3440 , #3b4252 , #434c5e , #4c566a
