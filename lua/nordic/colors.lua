@@ -6,19 +6,21 @@ local palette = {
 
     -- Darker colors.
     -- Not in base Nord.
-    black = "#2b2f3a",
+    black = "#1a1d23",
+		statusline_black = "#111318",
     -- This color is actually used on their website's dark theme.
-    gray0 = "#242933",
+		--  #1e222a , #242933 , # 2e3440 , #3b4252 , #434c5e , #4c566a
+    gray0 = "#1e222a",
 
     -- Polar Night.
-    gray1 = "#2E3440",
-    gray2 = "#3B4252",
-    gray3 = "#434C5E",
-    gray4 = "#4C566A",
+    gray1 = "#242933",
+    gray2 = "#2e3440",
+    gray3 = "#3b4252",
+    gray4 = "#434c5e",
 
     -- A light blue/gray (nice for comments).
     -- From @nightfox.nvim.
-    gray5 = "#60728A",
+    gray5 = "#4c566a",
 
     -- Dim white.
     -- From @nightfox.nvim.
@@ -90,7 +92,7 @@ palette.bg_sidebar = palette.bg
 palette.bg_float = palette.bg
 palette.bg_popup = palette.bg
 palette.bg_search = palette.gray1
-palette.bg_statusline = palette.bg_dark
+palette.bg_statusline = palette.statusline_black
 palette.bg_selected = palette.gray1
 
 -- Foregrounds.
