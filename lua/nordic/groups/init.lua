@@ -14,7 +14,6 @@ M.integrations = {
     "trouble",
     "which-key",
     "gitsigns",
-    "telescope",
     "leap"
 }
 

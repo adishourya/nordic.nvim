@@ -40,7 +40,7 @@ return {
     -- ["@operator"] = { fg = c.orange.bright }, -- For any operator: `+`, but also `->` and `*` in C.
     ["@parameter"] = {
         fg = c.white0,
-        italic = true
+        italic = false
     }, -- For parameters of a function.
     -- TSParameterReference= { };    -- For references to parameters of a function.
     -- ["@property"] = { fg = c.cyan.base }, -- Same as `TSField`.
@@ -110,7 +110,7 @@ return {
     ["@method.call"] = { fg = c.blue2 },
     ["@function.call"] = { fg = c.blue2 },
     ["@function.builtin"] = { fg = c.blue2 },
-    ["@variable.builtin"] = { fg = c.blue0, italic = true },
+    ["@variable.builtin"] = { fg = c.blue0, italic = false },
     -- Cyan.
     ["@field"] = { fg = c.cyan.base },
     ["@property"] = { fg = c.cyan.base },

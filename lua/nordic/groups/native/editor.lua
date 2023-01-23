@@ -37,7 +37,7 @@ return {
     }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 
     CursorLine = {
-        bg = c.bg_highlight
+        bg = c.bg_selected
     }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 
     Directory = {

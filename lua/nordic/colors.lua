@@ -6,7 +6,7 @@ local palette = {
 
     -- Darker colors.
     -- Not in base Nord.
-    black = "#191C24",
+    black = "#2b2f3a",
     -- This color is actually used on their website's dark theme.
     gray0 = "#242933",
 
