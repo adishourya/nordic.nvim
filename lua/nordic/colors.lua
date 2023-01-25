@@ -2,7 +2,7 @@
 
 local palette = {
 
-    none = "NONE",
+	none = 'NONE',
 
     -- Darker colors.
     -- Not in base Nord.
@@ -22,62 +22,61 @@ local palette = {
     -- From @nightfox.nvim.
     gray5 = "#4c566a",
 
-    -- Dim white.
-    -- From @nightfox.nvim.
-    white0 = "#BBC3D4",
+	-- Dim white.
+	-- From @nightfox.nvim.
+	white0 = '#BBC3D4',
 
-    -- Snow storm.
-    white1 = "#D8DEE9",
-    white2 = "#E5E9F0",
-    white3 = "#ECEFF4",
+	-- Snow storm.
+	white1 = '#D8DEE9',
+	white2 = '#E5E9F0',
+	white3 = '#ECEFF4',
 
-    -- Frost.
-    -- Bright & dim @nightfox.nvim.
-    blue0 = "#5E81AC",
-    blue1 = "#81A1C1",
-    blue2 = "#88C0D0",
-    cyan  = {
-        base = "#8FBCBB",
-        bright = "#93CCDC",
-        dim = "#69A7BA",
-    },
+	-- Frost.
+	-- Bright & dim @nightfox.nvim.
+	blue0 = '#5E81AC',
+	blue1 = '#81A1C1',
+	blue2 = '#88C0D0',
+	cyan = {
+		base = '#8FBCBB',
+		bright = '#93CCDC',
+		dim = '#69A7BA',
+	},
 
-    -- Aurora.
-    -- These colors are used a lot, so we need variations for them.
-    -- Base colors are from original Nord palette.
-    -- Bright & dim from @nightfox.nvim.
-    red = {
-        base = "#BF616A",
-        bright = "#D06F79",
-        dim = "#A54E56",
-    },
-    orange = {
-        base = "#D08770",
-        bright = "#D89079",
-        dim = "#B46950",
-    },
-    yellow = {
-        base = "#EBCB8B",
-        bright = "#F0D399",
-        dim = "#D9B263",
-    },
-    green = {
-        base = "#A3BE8C",
-        bright = "#B1D196",
-        dim = "#8AA872",
-    },
-    magenta = {
-        base = "#B48EAD",
-        bright = "#C895BF",
-        dim = "#9D7495",
-    },
-    -- From @nightfox.nvim.
-    blue = {
-        base = "#81A1C1",
-        bright = "#8CAFD2",
-        dim = "#668AAB",
-    }
-
+	-- Aurora.
+	-- These colors are used a lot, so we need variations for them.
+	-- Base colors are from original Nord palette.
+	-- Bright & dim from @nightfox.nvim.
+	red = {
+		base = '#BF616A',
+		bright = '#D06F79',
+		dim = '#A54E56',
+	},
+	orange = {
+		base = '#D08770',
+		bright = '#D89079',
+		dim = '#B46950',
+	},
+	yellow = {
+		base = '#EBCB8B',
+		bright = '#F0D399',
+		dim = '#D9B263',
+	},
+	green = {
+		base = '#A3BE8C',
+		bright = '#B1D196',
+		dim = '#8AA872',
+	},
+	magenta = {
+		base = '#B48EAD',
+		bright = '#C895BF',
+		dim = '#9D7495',
+	},
+	-- From @nightfox.nvim.
+	blue = {
+		base = '#81A1C1',
+		bright = '#8CAFD2',
+		dim = '#668AAB',
+	},
 }
 
 -- Now define some use cases.
@@ -111,23 +110,24 @@ palette.border_nb = palette.orange.base
 
 -- Diffs.
 palette.diff = {}
-palette.diff.add = palette.green.dim
-palette.diff.change = palette.yellow.dim
-palette.diff.delete = palette.red.dim
-palette.diff.text = palette.fg
+palette.diff.add = palette.green.bright
+palette.diff.change = palette.yellow.base
+palette.diff.delete = palette.red.base
+palette.diff.text = palette.diff.add
+palette.diff.bg = palette.gray1
 
 -- Git.
 palette.git = {}
-palette.git.add = palette.green.bright
-palette.git.delete = palette.red.bright
-palette.git.change = palette.yellow.base
+palette.git.add = palette.green.base
+palette.git.delete = palette.red.base
+palette.git.change = palette.blue1
 
 -- Diagnostics.
 palette.error = palette.red.bright
 palette.warn = palette.yellow.base
 palette.warning = palette.warn
 palette.hint = palette.green.bright
-palette.info = palette.blue.bright
+palette.info = palette.blue2
 
 -- Misc.
 palette.comment = palette.gray4

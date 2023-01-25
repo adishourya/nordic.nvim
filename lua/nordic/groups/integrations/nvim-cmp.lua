@@ -2,9 +2,13 @@ local c = require 'nordic.colors'
 
 return {
 
-	LeapLabelPrimary = {
+	BorderBG = {
+		fg = c.white0,
+	},
+
+	PmenuSel = {
+		bg = c.yellow,
 		fg = c.black,
-		bg = c.yellow.dim,
 		bold = true,
 	},
 }
