@@ -3,18 +3,18 @@ local merge = require('nordic.utils').merge
 local M = {}
 
 M.integrations = {
-    "barbar",
-    "dap-ui",
-    "dap",
-    "dashboard",
-    "indent-blankline",
-    "lspsaga",
-    "nvim-tree",
-    "treesitter",
-    "trouble",
-    "which-key",
-    "gitsigns",
-    "leap"
+	'barbar',
+	'dap-ui',
+	'dap',
+	'dashboard',
+	'indent-blankline',
+	'lspsaga',
+	'nvim-tree',
+	'treesitter',
+	'trouble',
+	'which-key',
+	'gitsigns',
+	'leap',
 }
 
 M.core = {
