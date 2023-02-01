@@ -6,6 +6,7 @@ on:
 
 jobs:
   docs:
+    if: github.event != 'pull_request'
     name: Pandoc to vimdoc
     runs-on: ubuntu-latest
     permissions:
@@ -17,10 +18,11 @@ jobs:
         uses: kdheepak/panvimdoc@main
         with:
           vimdoc: nordic.nvim
+      - run: git pull
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Auto generate docs"
+          commit_message: "CI(bot): Generate docs"
           commit_user_name: "github-actions[bot]"
           commit_user_email: "github-actions[bot]@users.noreply.github.com"
           commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"

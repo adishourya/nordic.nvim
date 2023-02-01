@@ -1,17 +1,18 @@
-# nordic.nvim
+# 🌒 Nordic
 
-A Neovim colorscheme based on [Nord](https://www.nordtheme.com/), but `Aurora` > `Frost`.  
+[![Tests](https://github.com/AlexvZyl/nordic.nvim/workflows/Tests/badge.svg)](https://github.com/AlexvZyl/nordic.nvim/actions?workflow=Tests) 
 
-The idea behind this colorscheme is to use Nord, but add some darker colors and use `Aurora` more prominently than Nord themes usually do.
+A Neovim colorscheme based on [Nord](https://www.nordtheme.com/), but Aurora > Frost.  The idea behind this colorscheme is to use Nord, but add some darker colors and use Aurora more prominently than Nord themes usually do.  This ends up creating a colorscheme that is soft on the eyes.
 
-# ⚠️ Status
-
-This colorscheme is still in early development, so please do not hesitate if there is anything wrong or if you have any suggestions!  Currently I am [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) it to make sure I did not miss anything.
+> ⚠️ &nbsp; This colorscheme is still in early development, so please do not hesitate if there is anything wrong or if you have any suggestions!  Currently I am [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) it to make sure I do not miss anything.
 
 # 📷 Showcase
 
 *Nvim-tree, lsp, bar-bar, lualine and treesitter:*
 ![image](https://user-images.githubusercontent.com/81622310/214236416-5cfe1638-e3f9-4f24-a330-489c341ce0fc.png)
+
+*Alongside [BTop++](https://github.com/aristocratos/btop) and a Nord wallpaper:*
+![image](https://user-images.githubusercontent.com/81622310/215334958-cba79eba-bd86-4ca9-bdf1-32937ce86828.png)
 
 <details>
 <summary>Telescope</summary>
@@ -24,9 +25,16 @@ This colorscheme is still in early development, so please do not hesitate if the
 </details>
 
 <details>
-<summary>Dashboard & which-key</summary>
+<summary>Dashboard</summary>
 
-![image](https://user-images.githubusercontent.com/81622310/214096444-7b1c3b7c-59cc-4e71-be6d-8c30522cfe68.png)
+![image](https://user-images.githubusercontent.com/81622310/215493953-5d9979cc-acd2-4f1b-8ab8-59892dc1dcc2.png)
+
+</details>
+
+<details>
+<summary>Diffview</summary>
+
+![image](https://user-images.githubusercontent.com/81622310/215494492-eb02ce7a-03a3-47e9-84b2-09505acc4d5f.png)
 
 </details>
 
@@ -41,6 +49,19 @@ With [packer.nvim](https://github.com/wbthomason/packer.nvim):
 
 ```lua
 use 'AlexvZyl/nordic.nvim'
+```
+
+With [lazy.nvim](https://github.com/folke/lazy.nvim):
+
+```lua
+{
+    'AlexvZyl/nordic.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+        require 'nordic' .load()
+    end
+}
 ```
 
 With [vim-plug](https://github.com/junegunn/vim-plug):
@@ -65,20 +86,20 @@ vim.cmd.colorscheme 'nordic'
 require 'nordic' .load()
 ```
 
-Using with `lualine`:
+Using with lualine:
 
 ```lua
 require 'lualine' .setup {
-  options = {
-    theme = 'nordic'
-  }
+    options = {
+        theme = 'nordic'
+    }
 }
 ```
 
 To get the palette in lua:
 
 ```lua
-local palette = require 'nordic.colors' 
+local palette = require 'nordic.colors'
 ```
 
 # ⚙️ Configuration
@@ -87,32 +108,46 @@ Nordic will use the default values, unless `setup` is called.  Below is the defa
 
 ```lua
 require 'nordic' .setup {
-  telescope = {
-    -- Available styles: `classic`, `flat`.
-    style = 'flat'
-  },
-  -- These can contain anything that neovim understands.
-  -- (fg, bg, italic, bold, etc.)
-  syntax = {
-    comments = {
-      italic = true,
-      bold = false
+    -- Telesccope custom configs.
+    telescope = {
+        -- Available styles: `classic`, `flat`.
+        style = 'flat',
     },
-    operators = {
-      italic = false,
-      bold = true
-    },
-    keywords = {
-      italic = false,
-      bold = true
+    -- Enable bold keywords.
+    bold_keywords = true,
+    -- Enable italicized comments.
+    italic_comments = true,
+    -- Enable general editor background transparency.
+    transparent_bg = false,
+    -- Override styling of any highlight group.
+    -- (see next section for an example)
+    override = {},
+    cursorline = {
+        bold = false,
+        -- Avialable themes: 'dark', 'light'.
+        theme = 'light'
     }
-  }
+}
+```
+
+An example of overriding the `TelescopePromptTitle` colors:
+
+```lua
+local palette = require 'nordic.colors' .palette
+require 'nordic' .setup {
+    override = {
+        TelescopePromptTitle = {
+	    fg = palette.red.bright,
+            bg = palette.green.base,
+            italic = true,
+        },
+    }
 }
 ```
 
 # 🗒️ Supported Plugins
 
-This is the list of currently supported plugins.  I use these myself, if you want other plugins to be supported either open an issue or submit a PR!
+This is the list of currently supported plugins.  If you want other plugins to be supported either open an issue or submit a PR!
 
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - [barbar.nvim](https://github.com/romgrk/barbar.nvim)
@@ -123,15 +158,27 @@ This is the list of currently supported plugins.  I use these myself, if you wan
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [leap.nvim](https://github.com/ggandor/leap.nvim)
 - [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim)
+- [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [trouble.nvim](https://github.com/folke/trouble.nvim)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
 - [diffview.nvim](https://github.com/sindrets/diffview.nvim)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [nvim-notify](https://github.com/rcarriga/nvim-notify)
+- [vimtex](https://github.com/lervag/vimtex)
 
 # 🎙️ Acknowledgements
 
-- [folke/tokyonight](https://github.com/folke/tokyonight.nvim) served as an excellent example for a Neovim theme.
+- [folke/tokyonight](https://github.com/folke/tokyonight.nvim) served as an excellent example and template to create a Neovim theme.
 - [EdenEast/nightfox.nvim](https://github.com/EdenEast/nightfox.nvim) for bright & dim versions of the Nord palette.
+- [Dotfiles](https://github.com/AlexvZyl/.dotfiles) used in the screenshots.
 
+</br>
+
+<p align="center">
+    <a href="https://github.com/AlexvZyl/nordic.nvim/graphs/contributors">
+        <img src="https://contrib.rocks/image?repo=AlexvZyl/nordic.nvim" />
+    </a>
+</p>

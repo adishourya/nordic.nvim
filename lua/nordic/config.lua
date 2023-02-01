@@ -1,32 +1,33 @@
 local M = {}
 
-local defaults = {
-	telescope = {
-		-- Available styles: `classic`, `flat`.
-		style = 'flat',
-	},
-	-- These values will be used to override the default.
-	syntax = {
-		comments = {
-			italic = true,
-		},
-		operators = {
-			bold = true,
-		},
-		keywords = {
-			bold = true,
-		},
-	},
+M.defaults = {
+    telescope = {
+        -- Available styles: `classic`, `flat`.
+        style = 'flat',
+    },
+    -- Enable bold keywords and operators
+    bold_keywords = true,
+    -- Enable italicized comments
+    italic_comments = true,
+    -- Enable general editor background transparency
+    transparent_bg = false,
+    -- Override styling of any highlight group
+    override = {},
+    cursorline = {
+        bold = false,
+        -- Avialable styles: 'dark', 'light'.
+        theme = 'light',
+    },
 }
 
 M.options = {}
 
 function M.setup(options)
-	M.options = vim.tbl_deep_extend('force', {}, defaults, options or {})
+    M.options = vim.tbl_deep_extend('force', {}, M.defaults, options or {})
 end
 
 function M.extend(options)
-	M.options = vim.tbl_deep_extend('force', {}, M.options or defaults, options or {})
+    M.options = vim.tbl_deep_extend('force', {}, M.options or M.defaults, options or {})
 end
 
 -- Init the config.

@@ -2,21 +2,62 @@ local c = require 'nordic.colors'
 
 return {
 
-	DashboardHeader = {
-		fg = c.yellow.base,
-		bold = true,
-	},
+    -- General.
 
-	DashboardFooter = {
-		fg = c.cyan.base,
-		bold = true,
-	},
+    DashboardHeader = {
+        fg = c.yellow.base,
+        bold = true,
+    },
 
-	DashboardCenter = {
-		fg = c.green.base,
-	},
+    DashboardFooter = {
+        fg = c.cyan.base,
+        bold = true,
+    },
 
-	DashboardShortCut = {
-		fg = c.red.base,
-	},
+    DashboardCenter = {
+        fg = c.green.base,
+    },
+
+    DashboardShortCut = {
+        fg = c.red.base,
+        bold = true,
+    },
+
+    -- Hyper.
+
+    DashboardProjectTitle = {
+        fg = c.orange.base,
+        bold = true,
+    },
+
+    DashboardProjectTitleIcon = {
+        link = 'DashboardProjectTitle',
+    },
+
+    DashboardProjectIcon = {
+        fg = c.magenta.base,
+    },
+
+    DashboardMruTitle = {
+        link = 'DashboardProjectTitle',
+    },
+
+    DashboardMruIcon = {},
+
+    DashboardFiles = {
+        fg = c.fg,
+    },
+
+    -- Doom.
+
+    DashboardDesc = {
+        fg = c.green.base,
+    },
+
+    DashboardKey = {
+        fg = c.red.base,
+        bold = true,
+    },
+
+    DashboardIcon = {},
 }

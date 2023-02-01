@@ -1,11 +1,12 @@
-name: Auto format 
+name: Formatting
 
 on:
   push:
     branches: [ "main" ]
 
 jobs:
-  docs:
+  fmt:
+    if: github.event != 'pull_request'
     name: Format with StyLua
     runs-on: ubuntu-latest
     permissions:
@@ -17,11 +18,11 @@ jobs:
         uses: JohnnyMorganz/stylua-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          args: --config-path=stylua.toml .
+          args: --config-path=.stylua.toml .
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Auto format"
+          commit_message: "CI(bot): Formatting"
           commit_user_name: "github-actions[bot]"
           commit_user_email: "github-actions[bot]@users.noreply.github.com"
           commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
