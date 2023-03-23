@@ -221,7 +221,7 @@ local groups = {
     }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 
     StatusLine = {
-        fg = c.fg_sidebar,
+        fg = c.fg,
         bg = c.bg_statusline,
     }, -- status line of current window
 
