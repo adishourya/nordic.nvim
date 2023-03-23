@@ -9,32 +9,39 @@ A Neovim colorscheme based on [Nord](https://www.nordtheme.com/), but Aurora > F
 # 📷 Showcase
 
 *Nvim-tree, lsp, bar-bar, lualine and treesitter:*
-![image](https://user-images.githubusercontent.com/81622310/214236416-5cfe1638-e3f9-4f24-a330-489c341ce0fc.png)
+![image](https://user-images.githubusercontent.com/81622310/219347174-035d2b63-7645-44a3-be15-119c829add90.png)
 
-*Alongside [BTop++](https://github.com/aristocratos/btop) and a Nord wallpaper:*
-![image](https://user-images.githubusercontent.com/81622310/215334958-cba79eba-bd86-4ca9-bdf1-32937ce86828.png)
+*Kitty and BTop++:*
+![image](https://user-images.githubusercontent.com/81622310/217228212-619a8735-d5be-4c83-837d-3ab0cd4a33c0.png)
+
+<details>
+<summary>[WIP] Mixed with onedark</summary>
+
+![image](https://user-images.githubusercontent.com/81622310/219348746-ab68f109-5cf5-42dd-8c72-48c6976231df.png)
+
+</details>
 
 <details>
 <summary>Telescope</summary>
 
 *Flat:*
-![image](https://user-images.githubusercontent.com/81622310/213918343-a4daac04-9e98-4ba1-89f8-0e8eb4b73c10.png)
+![image](https://user-images.githubusercontent.com/81622310/219347783-017a0e5a-f38d-4eb0-9d7c-29fc90527fc6.png)
 *Classic:*
-![image](https://user-images.githubusercontent.com/81622310/213974295-c9381a16-6f02-49dd-88b3-64f03ef9d5c7.png)
+![image](https://user-images.githubusercontent.com/81622310/219347870-05786199-a095-4602-a958-9db90b8acde3.png)
 
 </details>
 
 <details>
 <summary>Dashboard</summary>
 
-![image](https://user-images.githubusercontent.com/81622310/215493953-5d9979cc-acd2-4f1b-8ab8-59892dc1dcc2.png)
+![image](https://user-images.githubusercontent.com/81622310/219345149-4385bb9b-54de-488d-b0f3-a846b723ff1a.png)
 
 </details>
 
 <details>
 <summary>Diffview</summary>
 
-![image](https://user-images.githubusercontent.com/81622310/215494492-eb02ce7a-03a3-47e9-84b2-09505acc4d5f.png)
+![image](https://user-images.githubusercontent.com/81622310/219347704-376d040d-6e30-4918-9dd1-06b3cd29035d.png)
 
 </details>
 
@@ -42,6 +49,26 @@ A Neovim colorscheme based on [Nord](https://www.nordtheme.com/), but Aurora > F
 # 🎨 Palette
 
 TODO
+
+# 📟 Terminal Emulators
+
+Properly rendering fonts can be a complex problem and, as expected, different terminal emulators (TE) have different results.  I personally use [Kitty](https://github.com/kovidgoyal/kitty) due to it having the best font rendering (imo).  So if you use a different TE and the colors seem slightly inconsistent, that might be why.
+
+<details>
+<summary>Comparison</summary>
+
+</br>
+
+*[Kitty](https://github.com/kovidgoyal/kitty):*  
+![image](https://user-images.githubusercontent.com/81622310/217228588-ca059166-84b3-416c-a372-e547e57f8f3e.png)
+
+*[Alacritty](https://github.com/alacritty/alacritty):*  
+![image](https://user-images.githubusercontent.com/81622310/216267437-665ba1ca-02df-46c3-a84b-5ef76736164a.png)
+
+*[Neovide](https://github.com/neovide/neovide):*  
+![image](https://user-images.githubusercontent.com/81622310/216267855-14502471-c761-4875-be34-3e43968aa39b.png)
+
+</details>
 
 # 📦 Installation
 
@@ -108,25 +135,52 @@ Nordic will use the default values, unless `setup` is called.  Below is the defa
 
 ```lua
 require 'nordic' .setup {
-    -- Telesccope custom configs.
+    -- Available themes: 'nordic', 'onedark'.
+    -- Onedark is WIP.
+    theme = 'nordic',
+    -- Enable bold keywords.
+    bold_keywords = false,
+    -- Enable italic comments.
+    italic_comments = true,
+    -- Enable general editor background transparency.
+    transparent_bg = false,
+    -- Nordic specific options.
+    -- Set all to false to use original Nord colors.
+    -- Adjusts some colors to make the theme a bit nicer (imo).
+    nordic = {
+        -- Reduce the overall amount of blue in the theme (diverges from base Nord).
+        reduced_blue = true,
+    },
+    -- Onedark specific options.
+    -- Set all to false to keep original onedark colors.
+    -- Adjusts some colors to make the theme a bit nicer (imo).
+    -- WIP.
+    onedark = {
+        -- Brighten the whites to fit the theme better.
+        brighter_whites = true,
+    },
+    -- Override the styling of any highlight group.
+    override = {},
+    cursorline = {
+        -- Enable bold font in cursorline.
+        bold = false,
+        -- Avialable styles: 'dark', 'light'.
+        theme = 'light',
+        -- Hide the cursorline when the window is not focused.
+        hide_unfocused = true,
+    },
+    noice = {
+        -- Available styles: `classic`, `flat`.
+        style = 'classic',
+    },
     telescope = {
         -- Available styles: `classic`, `flat`.
         style = 'flat',
     },
-    -- Enable bold keywords.
-    bold_keywords = true,
-    -- Enable italicized comments.
-    italic_comments = true,
-    -- Enable general editor background transparency.
-    transparent_bg = false,
-    -- Override styling of any highlight group.
-    -- (see next section for an example)
-    override = {},
-    cursorline = {
-        bold = false,
-        -- Avialable themes: 'dark', 'light'.
-        theme = 'light'
-    }
+    leap = {
+        -- Dims the backdrop when using leap.
+        dim_backdrop = false,
+    },
 }
 ```
 
@@ -168,6 +222,18 @@ This is the list of currently supported plugins.  If you want other plugins to b
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [vimtex](https://github.com/lervag/vimtex)
+- [noice.nvim](https://github.com/folke/noice.nvim)
+- [fidget.nvim](https://github.com/j-hui/fidget.nvim)
+
+# 💻 Supported Platforms
+
+The list of currently supported platforms.
+
+- [kitty](https://github.com/kovidgoyal/kitty)
+- [iTerm2](https://github.com/gnachman/iTerm2)
+- [Windows Terminal](https://github.com/microsoft/terminal)
+- [wezterm](https://github.com/wez/wezterm)
+- [foot](https://codeberg.org/dnkl/foot)
 
 # 🎙️ Acknowledgements
 

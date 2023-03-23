@@ -76,6 +76,17 @@ local groups = {
         bg = c.bg,
         fg = c.orange.bright,
     },
+
+    -- Multi.
+    TelescopeMultiIcon = {
+        fg = c.yellow.bright,
+        bg = c.bg_dark,
+        bold = true,
+    },
+    TelescopeMultiSelection = {
+        fg = c.fg,
+        bg = c.bg_dark,
+    },
 }
 
 -- Apply the flat style.
@@ -105,7 +116,7 @@ if o.telescope.style == 'flat' then
 
     -- Titles.
     groups.TelescopePreviewTitle = {
-        bg = c.orange.base,
+        bg = c.blue2,
         fg = c.black,
         bold = true,
     }

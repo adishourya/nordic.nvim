@@ -3,11 +3,11 @@ local c = require 'nordic.colors'
 return {
 
     IndentBlanklineChar = {
-        fg = c.gray2,
+        fg = c.gray1,
     },
 
     IndentBlanklineContextChar = {
-        fg = c.gray4,
+        fg = c.gray2,
     },
 
     IndentBlanklineContextStart = {},

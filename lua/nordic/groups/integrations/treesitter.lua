@@ -15,8 +15,9 @@ return {
     -- TSBoolean           = { };    -- For booleans.
     -- TSCharacter         = { };    -- For characters.
     -- TSComment           = { };    -- For comment blocks.
+    ['@comment'] = { link = 'Comment' },
     ['@text.todo'] = { link = 'Todo' },
-    ['@text.note'] = { fg = c.bg, bg = c.info },
+    ['@text.note'] = { link = 'Note' },
     ['@text.warning'] = { fg = c.bg, bg = c.warning },
     ['@text.danger'] = { fg = c.bg, bg = c.error },
     ['@constructor'] = { link = '@function' }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
@@ -37,23 +38,24 @@ return {
     -- TSNone              = { };    -- TODO: docs
     -- TSNumber            = { };    -- For all numbers
     ['@parameter'] = {
-        fg = c.white0,
+        fg = c.fg,
         italic = true,
     }, -- For parameters of a function.
     -- TSParameterReference= { };    -- For references to parameters of a function.
-    ['@punctuation.delimiter'] = { fg = c.white0 }, -- For delimiters ie: `.`
-    ['@punctuation.bracket'] = { fg = c.white0 }, -- For brackets and parens.
+    ['@punctuation.delimiter'] = { fg = c.fg }, -- For delimiters ie: `.`
+    ['@punctuation.bracket'] = { fg = c.fg }, -- For brackets and parens.
     -- TSRepeat            = { };    -- For keywords related to loops.
     -- TSString            = { };    -- For strings.
     ['@string.regex'] = { fg = c.green.dim }, -- For regexes.
     ['@string.escape'] = { fg = c.green.bright }, -- For escape characters within a string.
+    ['@string.special'] = { fg = c.yellow.base }, -- For escape characters within a string.
     -- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
     -- TSType              = { };    -- For types.
     -- TSTypeBuiltin       = { };    -- For builtin types.
-    ['@variable'] = { fg = c.white0 }, -- Any variable name that does not have another highlight.
+    ['@variable'] = { fg = c.fg }, -- Any variable name that does not have another highlight.
 
     ['@tag'] = { fg = c.blue1 }, -- Tags like html tag names.
-    ['@tag.delimiter'] = { fg = c.white0 }, -- Tag delimiter like `<` `>` `/`
+    ['@tag.delimiter'] = { fg = c.fg }, -- Tag delimiter like `<` `>` `/`
     ['@tag.attribute'] = { fg = c.yellow.base }, -- Tag attribute like `id` `class`
     ['@text'] = { link = 'Normal' }, -- For strings considered text in a markup language.
     ['@text.reference'] = { fg = c.green.base },
@@ -66,54 +68,55 @@ return {
     ['@text.uri'] = { underline = true }, -- Any URI like a link or email.
     ['@text.diff.add'] = { link = 'DiffAdd' },
     ['@text.diff.delete'] = { link = 'DiffDelete' },
+    ['@text.literal'] = { link = 'String' },
 
     -- Lua
     -- luaTSProperty = { fg = c.red }, -- Same as `TSField`.
 
-    -- Magentas.
-    ['@constant'] = { fg = c.magenta.bright },
-    ['Number'] = { fg = c.magenta.bright },
-    ['@number'] = { fg = c.magenta.bright },
-    ['@float'] = { fg = c.magenta.bright },
-    ['@boolean'] = { fg = c.magenta.bright },
-    ['@constant.macro'] = { fg = c.magenta.bright },
-    ['@constant.builtin'] = { fg = c.magenta.bright },
-    -- Oranges (Keywords).
-    ['@keyword'] = { fg = c.orange.base, bold = o.bold_keywords },
-    ['@keyword.return'] = { fg = c.orange.base, bold = o.bold_keywords },
-    ['@keyword.function'] = { fg = c.orange.base, bold = o.bold_keywords },
-    ['@keyword.export'] = { fg = c.orange.base, bold = o.bold_keywords },
-    ['@repeat'] = { fg = c.orange.base, bold = o.bold_keywords },
-    ['@conditional'] = { fg = c.orange.base, bold = o.bold_keywords },
+    ['@constant'] = { link = 'Constant' },
+    ['Number'] = { link = 'Constant' },
+    ['@number'] = { link = 'Constant' },
+    ['@float'] = { link = 'Constant' },
+    ['@boolean'] = { link = 'Constant' },
+    ['@constant.macro'] = { link = 'Constant' },
+    ['@constant.builtin'] = { link = 'Constant' },
+
+    ['@keyword'] = { link = 'Keyword' },
+    ['@keyword.return'] = { link = 'Keyword' },
+    ['@keyword.function'] = { link = 'Keyword' },
+    ['@keyword.export'] = { link = 'Keyword' },
+    ['@repeat'] = { link = 'Keyword' },
+    ['@conditional'] = { link = 'Keyword' },
+    ['@class'] = { link = 'Keyword' },
     ['@operator'] = { link = 'Operator' },
-    ['@keyword.operator'] = { link = 'Operator' },
-    ['@class'] = { fg = c.orange.base, bold = o.bold_keywords },
-    ['@type.qualifier'] = { fg = c.orange.base, bold = o.bold_keywords },
-    ['@storageclass'] = { fg = c.orange.base, bold = o.bold_keywords },
-    -- Reds.
-    ['@preproc'] = { fg = c.red.base, bold = true },
-    ['@attribute'] = { fg = c.red.base, bold = true },
-    ['@include'] = { fg = c.red.base, bold = true },
-    ['@macro'] = { fg = c.red.base, bold = true },
-    ['@function.macro'] = { fg = c.red.base, bold = true },
-    ['@define'] = { fg = c.red.base, bold = true },
-    ['@exception'] = { fg = c.red.base, bold = true },
-    ['@punctuation.special'] = { fg = c.red.base, bold = true },
-    -- Blues.
-    ['@function'] = { fg = c.blue2 },
-    ['@method'] = { fg = c.blue2 },
-    ['@method.call'] = { fg = c.blue2 },
-    ['@function.call'] = { fg = c.blue2 },
-    ['@function.builtin'] = { fg = c.blue2 },
-    ['@variable.builtin'] = { fg = c.blue.dim, italic = true },
-    -- Cyan.
+    ['@keyword.operator'] = { link = 'Keyword' },
+
+    ['@macro'] = { link = 'Macro' },
+    ['@preproc'] = { link = 'Macro' },
+    ['@attribute'] = { link = 'Macro' },
+    ['@include'] = { link = 'Macro' },
+    ['@function.macro'] = { link = 'Macro' },
+    ['@define'] = { link = 'Macro' },
+    ['@exception'] = { link = 'Macro' },
+
+    ['@function'] = { link = 'Function' },
+    ['@method'] = { link = 'Function' },
+    ['@method.call'] = { link = 'Function' },
+    ['@function.call'] = { link = 'Function' },
+    ['@function.builtin'] = { link = 'Function' },
+    ['@variable.builtin'] = { fg = c.blue0, italic = true },
+
     ['@field'] = { fg = c.cyan.base },
     ['@property'] = { fg = c.cyan.base },
     ['@property.cpp'] = { fg = c.cyan.base },
-    -- Yellows.
+
     ['@namespace'] = { fg = c.yellow.dim, italic = true },
-    ['@type'] = { fg = c.yellow.base },
-    ['@type.builtin'] = { fg = c.yellow.base },
-    ['@type.definition'] = { fg = c.yellow.base },
+    ['@type'] = { link = 'Type' },
+    ['@type.builtin'] = { link = 'Type' },
+    ['@type.definition'] = { link = 'Type' },
+    ['@punctuation.special'] = { link = 'Type' },
+    ['@type.qualifier'] = { link = 'Keyword' },
+    ['@storageclass'] = { link = 'Keyword' },
+    ['@none'] = { link = 'None' },
     -----------------------
 }

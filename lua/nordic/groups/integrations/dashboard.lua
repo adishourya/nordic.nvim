@@ -11,7 +11,6 @@ return {
 
     DashboardFooter = {
         fg = c.cyan.base,
-        bold = true,
     },
 
     DashboardCenter = {
@@ -19,7 +18,7 @@ return {
     },
 
     DashboardShortCut = {
-        fg = c.red.base,
+        fg = c.gray4,
         bold = true,
     },
 
@@ -35,7 +34,7 @@ return {
     },
 
     DashboardProjectIcon = {
-        fg = c.magenta.base,
+        fg = c.magenta.bright,
     },
 
     DashboardMruTitle = {
@@ -59,5 +58,7 @@ return {
         bold = true,
     },
 
-    DashboardIcon = {},
+    DashboardIcon = {
+        fg = c.green.base,
+    },
 }
