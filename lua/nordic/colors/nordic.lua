@@ -5,23 +5,23 @@ local palette = {
 
     none = 'NONE',
 
-  -- Darker colors.
-  -- Not in base Nord.
-  black = '#1e222a',
-  statusline_black = '#111318',
+    -- Darker colors.
+    -- Not in base Nord.
+    black = '#1e222a',
+    statusline_black = '#111318',
 
-  gray0 = '#1a1d23',
-  cursorline = '#1c1f26',
+    gray0 = '#1a1d23',
+    cursorline = '#1c1f26',
 
-  -- Polar Night.
-  gray1 = '#242933',
-  gray2 = '#2e3440',
-  gray3 = '#3b4252',
-  gray4 = '#434c5e',
+    -- Polar Night.
+    gray1 = '#242933',
+    gray2 = '#2e3440',
+    gray3 = '#3b4252',
+    gray4 = '#434c5e',
 
-  -- A light blue/gray (nice for comments).
-  -- From @nightfox.nvim.
-  gray5 = '#4c566a',
+    -- A light blue/gray (nice for comments).
+    -- From @nightfox.nvim.
+    gray5 = '#4c566a',
 
     -- Dim white.
     -- From @nightfox.nvim.

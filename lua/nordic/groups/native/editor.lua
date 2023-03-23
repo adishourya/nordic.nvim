@@ -37,9 +37,9 @@ local groups = {
         bold = o.cursorline.bold,
     }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 
-	CursorLine = {
-		bg = c.cursorline,
-	}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorLine = {
+        bg = c.cursorline,
+    }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 
     Directory = {
         fg = c.blue1,

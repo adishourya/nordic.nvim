@@ -18,11 +18,11 @@ return {
     DiagnosticInfo = { fg = c.info, bold = false }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
     DiagnosticHint = { fg = c.hint, bold = false }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
-	DiagnosticVirtualTextError = {fg = c.error, bold = true }, -- Used for "Error" diagnostic virtual text
-	DiagnosticVirtualTextWarn = {  fg = c.warning }, -- Used for "Warning" diagnostic virtual text
-	DiagnosticVirtualTextWarning = {  fg = c.warning }, -- Used for "Warning" diagnostic virtual text
-	DiagnosticVirtualTextInfo = {  fg = c.info }, -- Used for "Information" diagnostic virtual text
-	DiagnosticVirtualTextHint = {  fg = c.hint }, -- Used for "Hint" diagnostic virtual text
+    DiagnosticVirtualTextError = { fg = c.error, bold = true }, -- Used for "Error" diagnostic virtual text
+    DiagnosticVirtualTextWarn = { fg = c.warning }, -- Used for "Warning" diagnostic virtual text
+    DiagnosticVirtualTextWarning = { fg = c.warning }, -- Used for "Warning" diagnostic virtual text
+    DiagnosticVirtualTextInfo = { fg = c.info }, -- Used for "Information" diagnostic virtual text
+    DiagnosticVirtualTextHint = { fg = c.hint }, -- Used for "Hint" diagnostic virtual text
 
     DiagnosticUnderlineError = { underline = true, sp = c.error }, -- Used to underline "Error" diagnostics
     DiagnosticUnderlineWarn = { underline = true, sp = c.warning }, -- Used to underline "Warning" diagnostics
