@@ -64,7 +64,7 @@ palette.hint = palette.green.bright
 palette.info = palette.blue2
 
 -- Misc.
-palette.comment = palette.gray4
+palette.comment = palette.gray5
 
 if o.cursorline.theme == 'light' then
     palette.bg_highlight = u.blend(palette.gray1, palette.bg, 0.5)

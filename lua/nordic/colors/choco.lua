@@ -21,7 +21,7 @@ local palette = {
 
   -- A light blue/gray (nice for comments).
   -- From @nightfox.nvim.
-  gray5 = '#373737',
+  gray5 = '#646464',
 
 	--------- These are going to be same as nordic---------------
 
