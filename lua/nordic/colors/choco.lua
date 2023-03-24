@@ -8,16 +8,16 @@ local palette = {
     -- Darker colors.
     -- Not in base Nord.
     black = '#0A0A0A',
-    statusline_black = '#101010',
+    statusline_black = '#050505',
 
-    gray0 = '#151515',
-    cursorline = '#212121',
+    gray0 = '#101010',
+    cursorline = '#151515',
 
     -- Polar Night.
-    gray1 = '#242424',
-    gray2 = '#272727',
-    gray3 = '#313131',
-    gray4 = '#343434',
+    gray1 = '#212121',
+    gray2 = '#242424',
+    gray3 = '#272727',
+    gray4 = '#313131',
 
     -- A light blue/gray (nice for comments).
     -- From @nightfox.nvim.
