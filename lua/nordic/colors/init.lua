@@ -32,10 +32,11 @@ palette.bg_fold = palette.gray2
 palette.fg = palette.white0
 palette.fg_bright = palette.white1
 palette.fg_dark = palette.white0
-palette.fg_sidebar = palette.gray2
+palette.fg_sidebar = palette.gray5
 palette.fg_fold = palette.fg
 palette.fg_float = palette.fg_bright
 palette.fg_selected = palette.fg_bright
+
 
 -- Borders.
 palette.border = palette.black
