@@ -7,11 +7,11 @@ local palette = {
 
 	-- Darker colors.
 	-- Not in base Nord.
-	black = '#050505',
-	statusline_black = '#101010',
+	black = '#0A0A0A',
+	statusline_black = '#050505',
 
-	gray0 = '#151515',
-	cursorline = '#181818',
+	gray0 = '#101010',
+	cursorline = '#151515',
 
 	-- Polar Night.
 	gray1 = '#212121',
