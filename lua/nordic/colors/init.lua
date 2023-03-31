@@ -37,7 +37,6 @@ palette.fg_fold = palette.fg
 palette.fg_float = palette.fg_bright
 palette.fg_selected = palette.fg_bright
 
-
 -- Borders.
 palette.border = palette.black
 palette.border_float = palette.white1
